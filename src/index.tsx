@@ -1,8 +1,8 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { RecoilRoot } from "recoil";
 import { darkTheme } from "./theme";
+import { HelmetProvider } from "react-helmet-async";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 
 const Globalstyle = createGlobalStyle`
@@ -78,7 +78,9 @@ root.render(
   <RecoilRoot>
     <ThemeProvider theme={darkTheme}>
       <Globalstyle />
-      <App />
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
     </ThemeProvider>
   </RecoilRoot>
 );

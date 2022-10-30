@@ -6,6 +6,7 @@ import {
 } from "react-beautiful-dnd";
 import styled from "styled-components";
 import { dndToDoState, IDndToDoState } from "./atoms";
+import { Helmet } from "react-helmet-async";
 import { useRecoilState } from "recoil";
 import Board from "./Board";
 import BoardAdd from "./BoardAdd";
@@ -120,6 +121,9 @@ function Dnd() {
 
   return (
     <Wrapper>
+      <Helmet>
+        <title>Hwan Board</title>
+      </Helmet>
       <Header />
       <DragDropContext onDragEnd={onDragEnd}>
         <MenuBar>
